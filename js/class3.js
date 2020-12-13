@@ -34,17 +34,14 @@ function getPok(id) {
 
 const onError = id => console.log(`Oh no! team Rocket just stole ${id}, try again later!`)
 
-// getPok(6)
-//     .then(pokemon => {
-//         console.log(`You found a ${pokemon.name}!`)
-//         return getPok(9)
-//     }).then(pokemon => {
-//         console.log(`You found a ${pokemon.name}!`)
-//         return getPok(3)
-//     }).then(pokemon => {
-//         console.log(`You found a ${pokemon.name}!`)
-//     })
-//     .catch(onError)
+getPok(randPok).then(pokemon => {
+    // debugger
+    if (pokemon.types[1]) {
+        console.log(`You found a ${pokemon.name} typing:${pokemon.types[0].type.name} ${pokemon.types[1].type.name}!`)
+    } else {
+        console.log(`You found a ${pokemon.name} typing:${pokemon.types[0].type.name}!`)
+    }
+}).catch(onError)
 
 // function obtainStarters() {
 //     var starters = [1, 4, 7, 25, 133, 152, 155, 158, 252, 255, 258, 387, 390, 393, 495, 498, 501, 650, 653, 656, 722, 725, 728, 810, 813, 816]
@@ -69,4 +66,4 @@ async function obtainStarters() {
     }
 }
 
-obtainStarters()
+// obtainStarters()
